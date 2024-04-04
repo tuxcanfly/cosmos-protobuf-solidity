@@ -6,6 +6,7 @@ COSMOS_PROTOBUF_VERSION=v1.4.11
 COSMOS_SDK_VERSION=v0.46.15
 IBC_GO_VERSION=v6.2.0
 ICS23_VERSION=v0.7.1
+CELESTIA_APP_VERSION=v1.7.0
 
 CWD=$(pwd)
 mkdir -p $CWD/proto
@@ -75,6 +76,7 @@ git_clone_folders https://github.com/cosmos/cosmos-sdk $COSMOS_SDK_VERSION \
     proto/tendermint proto/tendermint
 git_clone_folders https://github.com/cosmos/ibc-go $IBC_GO_VERSION proto/ibc proto/ibc
 git_clone_files https://github.com/cosmos/ibc-go $IBC_GO_VERSION third_party/proto/proofs.proto third_party/proofs.proto
+git_clone_folders https://github.com/celestiaorg/celestia-app $CELESTIA_APP_VERSION proto/celestia proto/celestia
 
 rm -rf $CWD/third_party.bak
 rm -rf $CWD/proto.bak
